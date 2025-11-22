@@ -1,3 +1,6 @@
+This Project was done as a school project, initially pushed on GitLab. I pushed it here to make it public.
+The goal of this was to create a backup software in C# .NET, including a console and a UI version.
+
 # EasySave Backup Software Documentation
 
 ## 1. Introduction
