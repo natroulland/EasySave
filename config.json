@@ -1,0 +1,16 @@
+{
+    "Jobs": [
+        {
+            "name": "Save1",
+            "sourcePath": "D:\\projet_3\\TEST\\source1\\rapport.pdf",
+            "targetPath": "E:\\SAVE\\projet_3\\TEST\\source1\\rapport.pdf",
+            "saveType": 0
+        },
+        {
+            "name": "Save2",
+            "sourcePath": "D:\\projet_3\\TEST\\source1\\rapport.pdf",
+            "targetPath": "E:\\SAVE\\projet_3\\TEST\\source1\\rapport.pdf",
+            "saveType": 1
+        }
+    ]
+}

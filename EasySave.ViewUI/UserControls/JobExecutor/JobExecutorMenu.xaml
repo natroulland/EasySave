@@ -1,0 +1,159 @@
+﻿<UserControl x:Class="EasySave.ViewUI.UserControls.JobExecutor.JobExecutorMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EasySave.ViewUI.UserControls.JobExecutor"
+             mc:Ignorable="d"
+             Width="Auto" Height="Auto"
+             MinWidth="665" MinHeight="475"
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <UserControl.Resources>
+        <!-- Définir des styles pour les boutons et les textes -->
+        <Style x:Key="ModernButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF6200EE"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ModernTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#333333"/>
+        </Style>
+        <Style x:Key="ModernListBoxStyle" TargetType="ListBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style x:Key="ModernDataGridStyle" TargetType="DataGrid">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="RowBackground" Value="#F9F9F9"/>
+            <Setter Property="AlternatingRowBackground" Value="#EFEFEF"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+        </Style>
+        <Style x:Key="ModernDataGridColumnHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#FF6200EE"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="8"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="332.5"/>
+            <ColumnDefinition Width="*" MinWidth="332.5"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ListBox ItemsSource="{Binding availableJobs}" Margin="10,20,10,10"
+                 Height="Auto" Width="Auto" SelectionChanged="ListBox_SelectionChanged"
+                 Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ModernListBoxStyle}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <CheckBox Content="{Binding Job.name}" IsChecked="{Binding isChecked}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox ItemsSource="{Binding availableJobs}" Margin="10,20,10,10"
+                 Height="Auto" Width="Auto"
+                 Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ModernListBoxStyle}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <StackPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding isChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                        <TextBlock Text="{Binding Job.name}" Style="{StaticResource ModernTextBlockStyle}"/>
+                        <TextBlock Text="{Binding Job.sourcePath}" Style="{StaticResource ModernTextBlockStyle}"/>
+                        <TextBlock Text="{Binding Job.targetPath}" Style="{StaticResource ModernTextBlockStyle}"/>
+                        <TextBlock Text="{Binding Job.type}" Style="{StaticResource ModernTextBlockStyle}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBlock x:Name="Available_jobs_TextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,1,0,0" TextWrapping="Wrap"
+                   Grid.Column="0" Grid.Row="0" Style="{StaticResource ModernTextBlockStyle}">
+            <Run Text="Available jobs"/><Run Language="fr-fr" Text=" :"/>
+        </TextBlock>
+
+        <TextBlock x:Name="Selected_jobs_TextBlock" Margin="17,1,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Grid.Column="1" Grid.Row="0" Style="{StaticResource ModernTextBlockStyle}">
+            <Run Text="Selected jobs"/><Run Language="fr-fr" Text=" details"/><Run Text=" :"/>
+        </TextBlock>
+
+        <DataGrid x:Name="DataGrid_JobState" ItemsSource="{Binding jobStateList}" VerticalAlignment="Stretch"
+                  Width="Auto" Height="Auto" MinHeight="176"
+                  Grid.Row="2" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2"
+                  Margin="20,0,20,50" AutoGenerateColumns="False" Style="{StaticResource ModernDataGridStyle}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Progression" HeaderStyle="{StaticResource ModernDataGridColumnHeaderStyle}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ProgressBar Value="{Binding ProgressBar}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Timestamp" Binding="{Binding JobStateEntity.Timestamp}" HeaderStyle="{StaticResource ModernDataGridColumnHeaderStyle}"/>
+                <DataGridTextColumn Header="Job name" Binding="{Binding JobStateEntity.Name}" HeaderStyle="{StaticResource ModernDataGridColumnHeaderStyle}"/>
+                <DataGridTextColumn Header="State" Binding="{Binding JobStateEntity.State}" HeaderStyle="{StaticResource ModernDataGridColumnHeaderStyle}"/>
+                <DataGridTextColumn Header="Source" Binding="{Binding JobStateEntity.FileSource}" HeaderStyle="{StaticResource ModernDataGridColumnHeaderStyle}"/>
+                <DataGridTextColumn Header="File to copy" Binding="{Binding JobStateEntity.TotalFileToCopy}" HeaderStyle="{StaticResource ModernDataGridColumnHeaderStyle}"/>
+                <DataGridTextColumn Header="File transfer time" Binding="{Binding JobStateEntity.FileTransferTime}" HeaderStyle="{StaticResource ModernDataGridColumnHeaderStyle}"/>
+                <DataGridTextColumn Header="File to do" Binding="{Binding JobStateEntity.NbFileToDo}" HeaderStyle="{StaticResource ModernDataGridColumnHeaderStyle}"/>
+                <DataGridTextColumn Header="Progression" Binding="{Binding JobStateEntity.Progression}" HeaderStyle="{StaticResource ModernDataGridColumnHeaderStyle}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="executejob_button" Content="Execute job(s)"
+            Margin="0,0,249,10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Row="3"
+            Height="30" Width="120" Click="executejob_button_Click" Grid.ColumnSpan="2"/>
+
+        <Button x:Name="stopjob_button" Content="Stop job"
+            Margin="0,0,20,10" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+            Grid.Column="1" Grid.Row="3"
+            Height="30" Width="70" Click="stopjob_button_Click"/>
+
+        <Button x:Name="pause_button" Content="Pause"
+            Margin="0,0,179,10" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+            Grid.Column="1" Grid.Row="3"
+            Height="30" Width="65" Click="pause_button_Click"/>
+        <Button x:Name="resume_button_Copy" Content="Resume"
+            Margin="0,0,109,10" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+            Grid.Column="1" Grid.Row="3"
+            Height="30" Width="65" Click="resume_button_Click"/>
+    
+
+    </Grid>
+</UserControl>

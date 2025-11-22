@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="EasySave.ViewUI.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="475" d:DesignWidth="665">
+    <UserControl.Resources>
+        
+        <Style x:Key="ModernTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#333333"/>
+        </Style>
+    </UserControl.Resources>
+
+    
+    <Grid>
+        <TextBlock x:Name="Extensions_TextBlock_Copy"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="222,45,0,0"
+                   Height="30" Width="262"
+                   TextWrapping="Wrap" FontWeight="Bold" Style="{StaticResource ModernTextBlockStyle}" FontSize="18">
+            <Run Text="Welcome to EasySave"/><Run Language="fr-fr" Text=" !"/>
+        </TextBlock>
+
+        <TextBlock 
+           HorizontalAlignment="Center" 
+           VerticalAlignment="Bottom" 
+           Margin="0,40,0,10" 
+           FontSize="12" 
+           Foreground="Gray"><Run Text="© 2025 EasySave - Developed by "/><Run Text="ProSoft 3"/></TextBlock>
+
+        
+        <TextBlock Margin="172,129,304,316" Style="{StaticResource ModernTextBlockStyle}" FontSize="16" FontFamily="Segoe UI Semibold">
+            <Run Text="What's New? Version 3.0"/><LineBreak/>
+        </TextBlock>
+        <TextBlock Margin="171,149,58,154" Style="{StaticResource ModernTextBlockStyle}" FontSize="14" FontFamily="Segoe UI Light">
+            <Run Text=" "/><LineBreak/>
+            <Run Text="- New Feature: Parallel Backup Processing"/><LineBreak/>
+            <Run Text="- Added Priority File Management"/><LineBreak/>
+            <Run Text="- Added Restriction on Parallel Transfer of Large Files"/><LineBreak/>
+            <Run Text="- New Feature: Real-time Interaction with Jobs"/><LineBreak/>
+            <Run Text="- Fix: Temporary Pause on Business Software Detection"/><LineBreak/>
+            <Run Text="- New Feature: Remote Console for Monitoring"/><LineBreak/>
+            <Run Text="- Fix: CryptoSoft used as Single-Instance Application"/>
+        </TextBlock>
+
+       
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,60">
+            <TextBlock Text="Project Repository:" FontSize="12" Foreground="Gray" HorizontalAlignment="Center"/>
+            <Button Cursor="Hand" Background="Transparent" BorderThickness="0" Click="GitLabButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://upload.wikimedia.org/wikipedia/commons/e/e1/GitLab_logo_2018.svg" 
+                           Width="24" Height="24" Margin="0,0,5,0"/>
+                    <TextBlock Text="GitLab Repo" Foreground="Blue" FontSize="14" TextDecorations="Underline" VerticalAlignment="Center" Width="107"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <Image Height="196" Margin="496,-54,-57,0" VerticalAlignment="Top" Source="/logo.png"/>
+    </Grid>
+</UserControl>

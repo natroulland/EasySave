@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{99954A52-923F-4E0B-B907-98F3250B583F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6007E75B-2930-464B-8DAF-8903000345A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EasySave.Tests", "EasySave.Tests", "{77741832-B50C-49F7-B588-CAFC227D037F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySave.Tests", "EasySave.Tests\EasySave.Tests.csproj", "{271BC77F-ADFE-4761-8016-5A511E31434E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{891CB02A-C19E-45EA-90BB-F9113B9E45B4}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		EasySave.View\bin\Debug\net8.0\languages\english.json = EasySave.View\bin\Debug\net8.0\languages\english.json
+		EasySave.View\bin\Debug\net8.0\languages\french.json = EasySave.View\bin\Debug\net8.0\languages\french.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EasySave.View", "EasySave.View", "{6926552A-AD7F-4F3B-B097-9D9AE051D607}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySave.View", "EasySave.View\EasySave.View.csproj", "{F65D84CD-B380-4CB4-93C0-31D40AFDCCAF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySave.ViewUI", "EasySave.ViewUI\EasySave.ViewUI.csproj", "{0238DB8D-AF34-4694-8EEE-0F3A0B5495C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EasySave", "EasySave", "{06023C6B-1548-465D-A995-47DB03CDD4FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EasySave", "EasySave", "{574DF807-F65A-4288-8732-932B487AB6CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySave.Core", "EasySave.Core\EasySave.Core.csproj", "{82D59CC1-BE57-448C-9762-9681A53DBD00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DistantClientEasySave", "DistantClientEasySave", "{E7539F84-1BFC-4AE2-A3AE-D8BE9A21D728}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistantClientEasySave.View", "DistantClientEasySave\DistantClientEasySave.View.csproj", "{E3B6D51A-9033-4581-981E-B2E07A6165FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{271BC77F-ADFE-4761-8016-5A511E31434E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{271BC77F-ADFE-4761-8016-5A511E31434E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{271BC77F-ADFE-4761-8016-5A511E31434E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{271BC77F-ADFE-4761-8016-5A511E31434E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F65D84CD-B380-4CB4-93C0-31D40AFDCCAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F65D84CD-B380-4CB4-93C0-31D40AFDCCAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F65D84CD-B380-4CB4-93C0-31D40AFDCCAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F65D84CD-B380-4CB4-93C0-31D40AFDCCAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0238DB8D-AF34-4694-8EEE-0F3A0B5495C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0238DB8D-AF34-4694-8EEE-0F3A0B5495C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0238DB8D-AF34-4694-8EEE-0F3A0B5495C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0238DB8D-AF34-4694-8EEE-0F3A0B5495C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82D59CC1-BE57-448C-9762-9681A53DBD00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D59CC1-BE57-448C-9762-9681A53DBD00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D59CC1-BE57-448C-9762-9681A53DBD00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D59CC1-BE57-448C-9762-9681A53DBD00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3B6D51A-9033-4581-981E-B2E07A6165FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3B6D51A-9033-4581-981E-B2E07A6165FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3B6D51A-9033-4581-981E-B2E07A6165FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3B6D51A-9033-4581-981E-B2E07A6165FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{77741832-B50C-49F7-B588-CAFC227D037F} = {6007E75B-2930-464B-8DAF-8903000345A6}
+		{271BC77F-ADFE-4761-8016-5A511E31434E} = {77741832-B50C-49F7-B588-CAFC227D037F}
+		{6926552A-AD7F-4F3B-B097-9D9AE051D607} = {99954A52-923F-4E0B-B907-98F3250B583F}
+		{F65D84CD-B380-4CB4-93C0-31D40AFDCCAF} = {6926552A-AD7F-4F3B-B097-9D9AE051D607}
+		{0238DB8D-AF34-4694-8EEE-0F3A0B5495C6} = {6926552A-AD7F-4F3B-B097-9D9AE051D607}
+		{06023C6B-1548-465D-A995-47DB03CDD4FC} = {99954A52-923F-4E0B-B907-98F3250B583F}
+		{82D59CC1-BE57-448C-9762-9681A53DBD00} = {06023C6B-1548-465D-A995-47DB03CDD4FC}
+		{E3B6D51A-9033-4581-981E-B2E07A6165FB} = {E7539F84-1BFC-4AE2-A3AE-D8BE9A21D728}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2C3A895-B74A-46F6-A358-1655071CBF75}
+	EndGlobalSection
+EndGlobal

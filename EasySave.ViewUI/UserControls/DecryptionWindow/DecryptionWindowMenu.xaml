@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="EasySave.ViewUI.UserControls.DecryptionWindow.DecryptionWindowMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EasySave.ViewUI.UserControls.DecryptionWindow"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!-- Définir des styles pour les boutons et les textes -->
+        <Style x:Key="ModernButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF6200EE"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ModernTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#333333"/>
+        </Style>
+        <Style x:Key="ModernTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        <Style x:Key="ModernPasswordBoxStyle" TargetType="PasswordBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock x:Name="SelectFolderToDecrypt" Text="Sélectionnez un dossier à déchiffrer" Margin="0,0,0,10" FontSize="16" Style="{StaticResource ModernTextBlockStyle}"/>
+            <Button x:Name="ChooseFolderButton" Content="Choisir un dossier" Click="ChooseFolder_Click" Margin="0,0,0,10" Width="184" Style="{StaticResource ModernButtonStyle}" Height="29"/>
+            <TextBlock x:Name="SelectedPathLabel" Text="Chemin sélectionné" Margin="0,0,0,5" Style="{StaticResource ModernTextBlockStyle}" FontSize="16"/>
+            <TextBlock x:Name="PasswordLabel" Text="Mot de passe" Margin="0,0,0,5" Visibility="Collapsed" Style="{StaticResource ModernTextBlockStyle}"/>
+            <PasswordBox Name="PasswordBox" Margin="0,0,0,10" Width="600" Visibility="Collapsed" Style="{StaticResource ModernPasswordBoxStyle}"/>
+            <TextBox x:Name="PathTextBox" IsReadOnly="True" Width="600" Style="{StaticResource ModernTextBoxStyle}" Margin="0,12,0,0"/>
+            <Button x:Name="DecryptButton" Content="Déchiffrer" Click="Decrypt_Click" Style="{StaticResource ModernButtonStyle}" Width="174" Margin="0,12,0,0" Height="30"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
